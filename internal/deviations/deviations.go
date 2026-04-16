@@ -2130,3 +2130,17 @@ func MacsecStateFt(dut *ondatra.DUTDevice) string {
 func MacsecCountersFt(dut *ondatra.DUTDevice) string {
 	return lookupDUTDeviations(dut).GetMacsecCountersFt()
 }
+
+// CoppL2UnicastUnsupported returns true if the device does not support L2 unicast COPP counter validation.
+func CoppL2UnicastUnsupported(dut *ondatra.DUTDevice) bool {
+	return lookupDUTDeviations(dut).GetCoppL2UnicastUnsupported()
+}
+
+// CoppPlatformPath returns the vendor-specific COPP platform path element (e.g. "sand", "strata").
+// Returns "sand" when not set.
+func CoppPlatformPath(dut *ondatra.DUTDevice) string {
+	if v := lookupDUTDeviations(dut).GetCoppPlatformPath(); v != "" {
+		return v
+	}
+	return "sand"
+}

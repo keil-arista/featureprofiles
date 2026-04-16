@@ -1295,6 +1295,13 @@ message Metadata {
     // Functional translator name for macsec counters telemetry.
     string macsec_counters_ft = 414;
 
+    // Device does not support L2 unicast COPP counter validation.
+    bool copp_l2_unicast_unsupported = 415;
+
+    // Vendor-specific COPP platform path element (e.g. "sand", "strata").
+    // Defaults to "sand" when empty.
+    string copp_platform_path = 416;
+
     // Reserved field numbers and identifiers.
     reserved 84, 9, 28, 20, 38, 43, 90, 97, 55, 89, 19, 36, 35, 40, 113, 131, 141, 173, 234, 254, 231, 300, 241, 49;
   }
